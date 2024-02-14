@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Ordinal Runestone
+# Runes
 
 **Table of Contents**
 - [Introduction](#introduction)
@@ -13,7 +13,7 @@
 
 # Introduction
 
-[Runestone](https://github.com/casey/runestone) is a fungible token protocol for Bitcoin.
+[Runes](https://github.com/casey/runestone) is a fungible token protocol for Bitcoin.
 
 It allows to issue/mint/transfer/burn tokens in a utxo[^1] way by client side validation, which means the Bitcoin itself is not aware of these tokens.
 
