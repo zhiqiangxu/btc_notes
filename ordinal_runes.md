@@ -296,6 +296,7 @@ let unfunded_transaction = Transaction {
 
 1. No dependency for taproot.
 2. Each operation only needs `1` tx on Bitcoin.
+3. Assets are allocated to `utxo` instead of `sat`.
 
 
 [^1]: This post assumes knowledge of the Bitcoin utxo.

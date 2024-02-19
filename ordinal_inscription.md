@@ -40,7 +40,7 @@ The overall process is essentially very similar to [`index_transaction_sats`](ht
 2. At block level, inscriptions on tx fee sats are saved in the [`flotsam`](https://github.com/ordinals/ord/blob/989b763afa4d61c4b03e224e175446d055ca4741/src/index/updater/inscription_updater.rs#L44) field, and later [appended](https://github.com/ordinals/ord/blob/989b763afa4d61c4b03e224e175446d055ca4741/src/index/updater/inscription_updater.rs#L272) to the tail of `floating_inscriptions` for coinbase tx, inscriptions on burned sats are [assigned](https://github.com/ordinals/ord/blob/989b763afa4d61c4b03e224e175446d055ca4741/src/index/updater/inscription_updater.rs#L339-L345) to the corresponding sat point of the null output.
 
 In order to inscribe an inscription on a specific tx input, just ensure the serialized inscription content is contained within the witness [tapscript](https://github.com/ordinals/ord/blob/989b763afa4d61c4b03e224e175446d055ca4741/src/inscriptions/envelope.rs#L105).
-By default the inscription is inscribed on the first sat of its input, unless it has a [pointer tag](https://docs.ordinals.com/inscriptions/pointer.html) specified to explicitly change the position.
+By default the inscription is inscribed on the first sat of its input, unless it has a [pointer tag](https://docs.ordinals.com/inscriptions/pointer.html) specified to explicitly [change](https://github.com/ordinals/ord/blob/f3df93f155ec8beedd427231b78f68ba0af5a454/src/index/updater/inscription_updater.rs#L193) the position.
 
 Inscription content is serialized using data pushes within unexecuted conditionals of tapscript, called "envelopes". Envelopes consist of an `OP_FALSE` `OP_IF` … `OP_ENDIF` wrapping any number of data pushes.
 
